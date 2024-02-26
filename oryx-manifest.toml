@@ -1,0 +1,10 @@
+
+[language]
+  name = "PHP"
+  version = "8.2"
+
+[build]
+  command = "composer install"
+
+[run]
+  command = "php login.html"
