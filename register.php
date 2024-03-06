@@ -3,9 +3,9 @@
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
-$servername = "localhost";
-$username = "marek";
-$db_password = "123456";
+$servername = "datasql4.westeurope.cloudapp.azure.com";
+$username = "manniksaarma";
+$db_password = "19696";
 $dbname = "shop";
 
 // Loome ühenduse

@@ -4,9 +4,9 @@ error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
 // Ühenduse loomine andmebaasiga (asendage need teie andmetega)
-$servername = "localhost";
-$username = "marek";
-$password = "123456";
+$servername = "datasql4.westeurope.cloudapp.azure.com";
+$username = "manniksaarma";
+$password = "19696";
 $dbname = "shop";
 
 $conn = new mysqli($servername, $username, $password, $dbname);

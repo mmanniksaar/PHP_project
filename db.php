@@ -1,7 +1,7 @@
 <?php
 $conn = 'mysql:host=localhost; dbname=shop';
-$username = 'marek';
-$password = '123456';
+$username = 'manniksaarma';
+$password = '19696';
 
 $options = array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION);
 try
