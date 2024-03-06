@@ -15,7 +15,7 @@ error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
 // Loome ühenduse andmebaasiga
-$servername = "datasql4.westeurope.cloudapp.azure.com";
+$servername = "datasql4.westeurope.cloudapp.azure.com:8081";
 $username = "manniksaarma"; // Asenda oma andmebaasi kasutajanimega
 $password = "19696"; // Asenda oma andmebaasi parooliga
 $dbname = "shop"; // Asenda oma andmebaasi nimega

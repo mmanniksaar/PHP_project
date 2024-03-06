@@ -1,5 +1,5 @@
 <?php
-$conn = 'mysql:host=localhost; dbname=shop';
+$conn = 'mysql:host=datasql4.westeurope.cloudapp.azure.com:8081; dbname=shop';
 $username = 'manniksaarma';
 $password = '19696';
 

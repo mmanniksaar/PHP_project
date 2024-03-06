@@ -3,7 +3,7 @@
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
-$servername = "datasql4.westeurope.cloudapp.azure.com";
+$servername = "datasql4.westeurope.cloudapp.azure.com:8081";
 $username = "manniksaarma";
 $db_password = "19696";
 $dbname = "shop";
