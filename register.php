@@ -8,8 +8,14 @@ $username = "manniksaarma";
 $db_password = "19696";
 $dbname = "shop";
 
+// Loome ühenduse andmebaasiga
+/* $servername = "localhost";
+$username = "marek"; // Asenda oma andmebaasi kasutajanimega
+$password = "123456"; // Asenda oma andmebaasi parooliga
+$dbname = "shop"; // Asenda oma andmebaasi nimega
+ */
 // Loome ühenduse
-$conn = new mysqli($servername, $username, $db_password, $dbname);
+$conn = new mysqli($servername, $username, $password, $dbname);
 
 // Kontrollime ühendust
 if ($conn->connect_error) {
@@ -39,7 +45,7 @@ if(isset($_POST['firstname'], $_POST['lastname'], $_POST['birthday'], $_POST['ge
 
     if ($conn->query($sql) === TRUE) {
         echo "New record created successfully";
-        header("Location: product.php");
+        header("Location: products.php");
         exit;
     } else {
         echo "Error: " . $sql . "<br>" . $conn->error;

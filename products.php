@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="et">
 <head>
+    <meta charset="UTF-8">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.10.2/css/all.css">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
@@ -9,8 +10,8 @@
 </head>
 
 <?php
-include 'db.php';
-
+/* include 'db.php';
+ */
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
@@ -19,6 +20,13 @@ $servername = "datasql4.westeurope.cloudapp.azure.com:8081";
 $username = "manniksaarma"; // Asenda oma andmebaasi kasutajanimega
 $password = "19696"; // Asenda oma andmebaasi parooliga
 $dbname = "shop"; // Asenda oma andmebaasi nimega
+
+// Loome ühenduse andmebaasiga
+/* $servername = "localhost";
+$username = "marek"; // Asenda oma andmebaasi kasutajanimega
+$password = "123456"; // Asenda oma andmebaasi parooliga
+$dbname = "shop"; // Asenda oma andmebaasi nimega
+ */
 
 $conn = new mysqli($servername, $username, $password, $dbname);
 
