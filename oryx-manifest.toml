@@ -7,4 +7,4 @@
   command = "composer install"
 
 [run]
-  command = "php index.html"
+  command = "index.html"
