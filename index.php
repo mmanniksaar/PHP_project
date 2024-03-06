@@ -4,8 +4,7 @@ error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
 // Ühenduse loomine andmebaasiga (asendage need teie andmetega)
-$email = '';
-$password = '';
+
 
 $db_server = $_ENV['MYSQL_HOSTNAME'] ?? getenv('MYSQL_HOSTNAME');
 $db_username = $_ENV['MYSQL_USERNAME'] ?? getenv('MYSQL_USERNAME');
@@ -42,7 +41,7 @@ if ($result->num_rows > 0) {
     exit(); // Oluline on lõpetada skripti töö, et vältida edasist töötlemist pärast suunamist
 } else {
     // Kasutaja andmeid ei leitud andmebaasist, suuname tagasi logimislehele koos veateatega
-    header("Location: index.php?error=invalid_credentials");
+    header("Location: register.php");
     $conn->close();
 
 }
