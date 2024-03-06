@@ -3,10 +3,11 @@
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
-$servername = "datasql4.westeurope.cloudapp.azure.com:8081";
-$username = "manniksaarma";
-$db_password = "19696";
-$dbname = "shop";
+$db_server = $_ENV['MYSQL_HOSTNAME'] ?? getenv('MYSQL_HOSTNAME');
+$db_username = $_ENV['MYSQL_USERNAME'] ?? getenv('MYSQL_USERNAME');
+$db_password = $_ENV['MYSQL_PASSWORD'] ?? getenv('MYSQL_PASSWORD');
+$db_name = $ENV['MYSQL_DB_NAME'] ?? getenv('MYSQL_DB_NAME');
+
 
 // Loome ühenduse andmebaasiga
 /* $servername = "localhost";
@@ -14,8 +15,9 @@ $username = "marek"; // Asenda oma andmebaasi kasutajanimega
 $password = "123456"; // Asenda oma andmebaasi parooliga
 $dbname = "shop"; // Asenda oma andmebaasi nimega
  */
-// Loome ühenduse
-$conn = new mysqli($servername, $username, $password, $dbname);
+
+$conn = new mysqli($db_server, $db_username, $db_password, $db_name);
+
 
 // Kontrollime ühendust
 if ($conn->connect_error) {
