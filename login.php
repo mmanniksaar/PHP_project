@@ -11,7 +11,7 @@ $conn->set_charset("utf8");
 if ($conn->connect_error) {
     die("Database connected: " . $conn->connect_error);
 }
-echo "Connection ok!";
+
 
 // Võtame vormist andmed
 $email = $_POST['email'];
