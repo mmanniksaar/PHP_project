@@ -1,6 +1,11 @@
 body{
-    background-color: #f7f7f5;
+    background: linear-gradient(to bottom right, #e2d7d7, #0f0f0f);
 }
+
+img{
+    border-radius: 5%; 
+}
+
 
 .divider:after,
 .divider:before {

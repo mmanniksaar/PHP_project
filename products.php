@@ -9,35 +9,37 @@
 
 </head>
 
+<header>
+    <?php include 'navbar.html'; ?>
+</header>
+
 <?php
 /* include 'db.php';
  */
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
-$db_server = $_ENV['MYSQL_HOSTNAME'] ?? getenv('MYSQL_HOSTNAME');
-$db_username = $_ENV['MYSQL_USERNAME'] ?? getenv('MYSQL_USERNAME');
-$db_password = $_ENV['MYSQL_PASSWORD'] ?? getenv('MYSQL_PASSWORD');
-$db_name = $ENV['MYSQL_DB_NAME'] ?? getenv('MYSQL_DB_NAME');
+include 'db.php';
 
+$conn = db_connection();
+$conn->set_charset("utf8");
 
-// Loome ühenduse andmebaasiga
-/* $servername = "localhost";
-$username = "marek"; // Asenda oma andmebaasi kasutajanimega
-$password = "123456"; // Asenda oma andmebaasi parooliga
-$dbname = "shop"; // Asenda oma andmebaasi nimega
- */
-
-$conn = new mysqli($db_server, $db_username, $db_password, $db_name);
-
-// Kontrollime ühendust
 if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
+    die("Database connected: " . $conn->connect_error);
 }
 
 // Teostame päringu, et saada toodete andmed
 $sql = "SELECT * FROM albums";
 $result = $conn->query($sql);
+
+
+echo '<hr>';
+echo '<hr>';
+echo '<hr>';
+echo '<hr>';
+echo '<hr>';
+echo '<hr>';
+echo '<hr>';
 
 // Kuvame tooted, kui päring oli edukas
 if ($result->num_rows > 0) {
