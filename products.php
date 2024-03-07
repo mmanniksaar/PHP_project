@@ -22,10 +22,6 @@ ini_set('display_errors', 1);
 
 $conn = db_connection();
 $conn->set_charset("utf8");
-/*
-if ($conn->connect_error) {
-    die("Database connected: " . $conn->connect_error);
-} */
 
 // Teostame päringu, et saada toodete andmed
 $sql = "SELECT * FROM albums";
