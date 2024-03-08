@@ -23,7 +23,6 @@ ini_set('display_errors', 1);
 $conn = db_connection();
 $conn->set_charset("utf8");
 
-// Teostame päringu, et saada toodete andmed
 $sql = "SELECT * FROM albums";
 $result = $conn->query($sql);
 
@@ -36,11 +35,8 @@ echo '<hr>';
 echo '<hr>';
 echo '<hr>';
 
-// Kuvame tooted, kui päring oli edukas
 if ($result->num_rows > 0) {
-    // Itereerime läbi iga toote andmed
     while($row = $result->fetch_assoc()) {
-        // Kuvame toote HTML-is
         echo '<div class="container py-5">';
         echo '<div class="row justify-content-center mb-3">';
         echo '<div class="col-md-12 col-xl-10">';
@@ -65,14 +61,12 @@ if ($result->num_rows > 0) {
         echo '</div>';
         echo '<ol class="list-group list-group-numbered">';
         
-         // Teeme päringu albumi laulude saamiseks
          $album_id = $row["id"];
          $songs_query = "SELECT * FROM album_songs WHERE album_id = $album_id";
          $songs_result = $conn->query($songs_query);
          
          if ($songs_result->num_rows > 0) {
              echo '<ol class="list-group list-group-numbered">';
-             // Kuvame iga laulu albumi jaoks
              while($song_row = $songs_result->fetch_assoc()) {
                  echo '<li >' .$song_row["song"] . '</li>';
              }
@@ -100,6 +94,5 @@ if ($result->num_rows > 0) {
     echo "No products found";
 }
 
-// Sulgeme ühenduse
 $conn->close();
 ?>

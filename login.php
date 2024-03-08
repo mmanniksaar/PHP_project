@@ -13,22 +13,17 @@ if ($conn->connect_error) {
 }
 
 
-// Võtame vormist andmed
 $email = $_POST['email'];
 $password = $_POST['password'];
 
-// Valmistame ette päringu andmebaasi
 $sql = "SELECT * FROM login WHERE email='$email' AND password='$password'";
 $result = $conn->query($sql);
 
-// Kontrollime, kas kasutaja eksisteerib andmebaasis
 if ($result->num_rows > 0) {
-    // Kasutaja on õige, suuname ta tervituslehele
     header("Location: products.php");
-    exit(); // Oluline on lõpetada skripti töö, et vältida edasist töötlemist pärast suunamist
+    exit(); 
 } else {
-    // Kasutaja andmeid ei leitud andmebaasist, suuname tagasi logimislehele koos veateatega
-    header("Location: register.php");
+    header("Location: register.html");
     $conn->close();
 
 }
