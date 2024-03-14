@@ -1,1 +1,3 @@
-![Alternatiivne tekst](/static/pictures/login_img.png)
+![Alternatiivne tekst](/images/login_img.png)
+![Alternatiivne tekst](/images/products_img.png)
+
